@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="App.Metrics" Version="4.4.0-preview.0.4" />
+    <PackageReference Include="App.Metrics.AspNetCore.Endpoints" Version="4.4.0-preview.0.4" />
+    <PackageReference Include="App.Metrics.AspNetCore.Mvc" Version="4.4.0-preview.0.4" />
+    <PackageReference Include="App.Metrics.AspNetCore.Mvc.Core" Version="4.4.0-preview.0.4" />
+    <PackageReference Include="App.Metrics.AspNetCore.Tracking" Version="4.4.0-preview.0.4" />
+    <PackageReference Include="App.Metrics.Extensions.Configuration" Version="4.4.0-preview.0.4" />
+    <PackageReference Include="App.Metrics.Extensions.Hosting" Version="4.4.0-preview.0.4" />
+    <PackageReference Include="App.Metrics.Formatters.Prometheus" Version="4.4.0-preview.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
