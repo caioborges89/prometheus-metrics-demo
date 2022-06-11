@@ -14,4 +14,4 @@ scrape_configs:
     scrape_interval: 5s   
 
     static_configs:
-      - targets: ['localhost:5000'] #change this to your hostname, defaults to '/metrics'
+      - targets: ['192.168.100.118:5000'] #change this to your hostname, defaults to '/metrics'
