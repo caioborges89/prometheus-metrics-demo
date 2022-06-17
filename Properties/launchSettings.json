@@ -27,5 +27,12 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
+  },
+  "MongoDB": {
+    "Database": "TodoDB",
+    "Host": "localhost",
+    "Port": 27017,
+    "User": "root",
+    "Password": "example"
   }
 }

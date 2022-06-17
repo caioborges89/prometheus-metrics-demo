@@ -1,7 +1,11 @@
 using App.Metrics;
 using Microsoft.AspNetCore.Mvc;
+using Prometheus.Metrics.Demo.infra;
+using Prometheus.Metrics.Demo.repository;
 
 var builder = WebApplication.CreateBuilder(args);
+
+ConfigurationManager configuration = builder.Configuration; 
 
 // Add services to the container.
 
@@ -26,6 +30,13 @@ builder.Services.AddMetricsReportingHostedService(); // Serviço roda em backgro
 builder.Services.AddMetricsEndpoints(); // Adicionando endpoints de métricas
 builder.Services.AddMetricsTrackingMiddleware(); // Adiciona os middleware de tracking
 builder.Services.AddMvc().AddMetrics(); // Adiciona o metrics no mvc
+
+var config = new ServerConfig();
+configuration.Bind(config);
+var mongoDbContext = new MongoDbContext(config.MongoDB);
+
+var orderRepository = new OrderRepository(mongoDbContext);
+builder.Services.AddSingleton<IOrderRepository>(orderRepository);
 
 var app = builder.Build();
 
